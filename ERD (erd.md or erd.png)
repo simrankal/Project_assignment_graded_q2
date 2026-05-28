@@ -1,0 +1,35 @@
+# ERD
+
+```text
+BATCHES
+--------
+batch_id (PK)
+batch_name
+
+        1
+        |
+        |------< STUDENTS >------|
+                   student_id (PK)
+                   batch_id (FK)
+
+STUDENTS >------< ENROLLMENTS >------ COURSES
+              (student_id, course_id)
+
+COURSES
+--------
+course_id (PK)
+
+PROBLEMS
+--------
+problem_id (PK)
+
+CONTESTS >------< CONTEST_PROBLEMS >------ PROBLEMS
+
+SUBMISSIONS
+-----------
+submission_id (PK)
+student_id (FK)
+problem_id (FK)
+
+SUBMISSIONS >------< TEST_RESULTS
+```
